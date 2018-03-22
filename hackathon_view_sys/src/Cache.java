@@ -56,7 +56,7 @@ public class Cache {
 	
 	public void removeItem(ClassData item) {
 		if(this.repo.containsValue(item)) {
-			this.repo.remove(item.getClassID());
+			this.repo.remove(item.getClassID());	
 		}
 	}
 	
