@@ -1,4 +1,4 @@
-package view_system;
+package view_sys;
 
 import java.util.Set;
 

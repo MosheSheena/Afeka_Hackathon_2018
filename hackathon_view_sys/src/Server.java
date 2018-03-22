@@ -1,4 +1,4 @@
-package view_system;
+package view_sys;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,32 +9,7 @@ import java.util.Set;
 
 public class Server {
 
-	private String csvFile = "/Users/mkyong/csv/country.csv";
-
-	private String cvsSplitBy = ",";
-
-	public Server(String csvFile, String cvsSplitBy) {
-		setCsvFile(csvFile);
-		setCsvSplitBy(cvsSplitBy);
-	}
-
-	public String getCsvFile() {
-		return csvFile;
-	}
-
-	public void setCsvFile(String csvFile) {
-		this.csvFile = csvFile;
-	}
-
-	public String getCvsSplitBy() {
-		return cvsSplitBy;
-	}
-
-	public void setCsvSplitBy(String cvsSplitBy) {
-		this.cvsSplitBy = cvsSplitBy;
-	}
-
-	public Set<ClassData> fetchDataFromCsv(String fileName, String delimiter) {
+	public Set<ClassData> fetchData(String fileName, String delimiter) {
 		
 		Set<ClassData> classes = new HashSet<>();
 		String line = "";

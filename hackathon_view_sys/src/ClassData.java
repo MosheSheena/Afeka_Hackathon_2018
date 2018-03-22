@@ -1,6 +1,6 @@
-package view_system;
+package view_sys;
 
-public class ClassData {
+public class ClassData implements Cacheable{
 
 	private int classID;
 	private boolean available;
@@ -56,6 +56,54 @@ public class ClassData {
 	}
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
+	}
+
+	@Override
+	public String toString() {
+		return "ClassData [classID=" + classID + ", available=" + available + ", startingHour=" + startingHour
+				+ ", endingHour=" + endingHour + ", isLab=" + isLab + ", courseName=" + courseName + "]";
+	}
+
+	@Override
+	public boolean isExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Object getIdentifier() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (available ? 1231 : 1237);
+		result = prime * result + classID;
+		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
+		result = prime * result + endingHour;
+		result = prime * result + (isLab ? 1231 : 1237);
+		result = prime * result + startingHour;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		ClassData other = (ClassData)obj;
+		if(this.classID == other.classID) {
+			if(this.startingHour == other.startingHour) {
+				if(this.endingHour == other.endingHour)
+					return true;
+			}
+			else
+				return false;
+		}
+		else
+			return false;
+		
+		return false;
 	}
 	
 	 
