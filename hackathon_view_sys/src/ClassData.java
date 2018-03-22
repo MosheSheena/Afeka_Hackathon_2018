@@ -3,6 +3,7 @@ package view_sys;
 public class ClassData implements Cacheable{
 
 	private int classID;
+	private int floorNum;
 	private boolean available;
 	private int startingHour;
 	private int endingHour;
@@ -11,6 +12,8 @@ public class ClassData implements Cacheable{
 	final static int NUM_FIELDS = 6;
 	final static String AVAILABLE = "0";
 	final static String NOT_AVAILABLE = "1";
+	final static int TTL = 3 * 60; // 3 hours to live in cache
+	
 	
 	public ClassData(int classID, boolean available, int startingHour, int endingHour, boolean isLab, String courseName) {
 		setClassID(classID);
@@ -104,6 +107,14 @@ public class ClassData implements Cacheable{
 			return false;
 		
 		return false;
+	}
+
+	public int getFloorNum() {
+		return floorNum;
+	}
+
+	public void setFloorNum(int floorNum) {
+		this.floorNum = floorNum;
 	}
 	
 	 

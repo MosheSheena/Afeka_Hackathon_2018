@@ -71,4 +71,8 @@ public class Server {
 		return new ClassData(classID, available, startingHour, endingHour, isLab, courseName);
 	}
 	
+	public void writeToCache(Set<ClassData> data) {
+		
+	}
+	
 }
